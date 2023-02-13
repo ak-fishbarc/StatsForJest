@@ -1,6 +1,8 @@
-const findMedian = require('./statistics4jest');
+const statFn = require('./statistics4jest');
 const sortMerge = require('./sortMerge');
 
+findMedian = statFn.findMedian;
+findMean = statFn.findMean;
 
 test('Sorts data set.', () =>
 {
@@ -29,5 +31,16 @@ test('Finds median of the data set.', () =>
 
   var data_set = [10, 12, 16, 18, 50, 22];
   expect(findMedian(data_set)).toBe(17);
-  
+
+})
+
+test('Finds mean of the data set.', () =>
+{
+
+  var data_set = [3, 5, 5, 4];
+  expect(findMean(data_set)).toBe(4.25);
+
+  var data_set = [15, 22, 35, 70, 82, 90];
+  expect(findMean(data_set).toFixed(2)).toEqual("52.33");
+
 })

@@ -16,5 +16,18 @@ function findMedian(data_set)
   return median;
 }
 
-// To do: Mean calculator.
-module.exports = findMedian;
+function findMean(data_set)
+{
+  var sorted_data = data_set;
+  var sum_up = 0;
+  var d_mean = 0;
+  for(value of sorted_data)
+  {
+    sum_up += value;
+  }
+  d_mean = sum_up / sorted_data.length;
+  return d_mean;
+}
+
+
+module.exports = { findMedian, findMean }
