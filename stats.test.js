@@ -3,6 +3,9 @@ const sortMerge = require('./sortMerge');
 
 findMedian = statFn.findMedian;
 findMean = statFn.findMean;
+enumerateSet = statFn.enumerateSet;
+findMode = statFn.findMode;
+
 
 test('Sorts data set.', () =>
 {
@@ -42,5 +45,19 @@ test('Finds mean of the data set.', () =>
 
   var data_set = [15, 22, 35, 70, 82, 90];
   expect(findMean(data_set).toFixed(2)).toEqual("52.33");
+
+})
+
+test('Finds mode of the data set.', () =>
+{
+
+  var data_set = [3, 5, 5, 8, 8, 8, 2, 2];
+  expect(findMode(data_set)).toEqual([8]);
+
+  var data_set = [3, 3, 3, 5, 5, 5, 6, 6, 7, 9];
+  expect(findMode(data_set)).toEqual([3, 5]);
+
+  var data_set = [2, 2, 4, 4, 4, 5, 5, 5, 5, 2, 2, 2];
+  expect(findMode(data_set)).toStrictEqual([2]);
 
 })
