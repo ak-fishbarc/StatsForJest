@@ -5,6 +5,7 @@ findMedian = statFn.findMedian;
 findMean = statFn.findMean;
 enumerateSet = statFn.enumerateSet;
 findMode = statFn.findMode;
+findStandardDeviation = statFn.findStandardDeviation;
 
 
 test('Sorts data set.', () =>
@@ -60,4 +61,13 @@ test('Finds mode of the data set.', () =>
   var data_set = [2, 2, 4, 4, 4, 5, 5, 5, 5, 2, 2, 2];
   expect(findMode(data_set)).toStrictEqual([2]);
 
+})
+
+test('Find standard deviation of the data set.', () =>
+{
+  var data_set = [3, 5, 6, 7];
+  expect(findStandardDeviation(data_set)).toEqual(1.479019945774904);
+
+  var data_set = [5, 5, 7, 8, 9, 22, 34]
+  expect(findStandardDeviation(data_set)).toEqual(10.190031142929719);
 })

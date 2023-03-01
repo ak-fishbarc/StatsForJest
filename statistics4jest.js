@@ -58,7 +58,7 @@ function findMode(data_set)
   /* Look at each number in enumerated data.
   If the number's count is higher than current pointer
   make it a new pointer; If there are any numbers in mode,
-  clear it as they are no longer the most occuring numbers
+  clear them as they are no longer the most occuring numbers
   in the data set. Add new value to an empty mode list. */
   for(key of enum_data)
   {
@@ -83,4 +83,16 @@ function findMode(data_set)
   return mode;
 }
 
-module.exports = { findMedian, findMean, findMode, enumerateSet }
+function findStandardDeviation(data_set)
+{
+  std_dev = 0;
+  mean = findMean(data_set);
+  for(i = 0; i < data_set.length; i++)
+  {
+    std_dev += (data_set[i] - mean)**2;
+  }
+  std_dev = (std_dev/data_set.length)**0.5;
+  return std_dev;
+}
+
+module.exports = { findMedian, findMean, findMode, enumerateSet, findStandardDeviation }
